@@ -49,16 +49,22 @@ namespace CinemaAutomation
         {
             txtsifre.UseSystemPasswordChar = true;
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             panel3.BackColor = Color.White;
             txt_kullaniciadi.BackColor = Color.White;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HomePage homePage = new HomePage();
+            homePage.Show();
+            this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
