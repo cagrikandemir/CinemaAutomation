@@ -30,34 +30,36 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
-            this.txt_kullaniciadi = new System.Windows.Forms.TextBox();
+            this.txtfilmad = new System.Windows.Forms.TextBox();
             this.filmnamepnl = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combofilmtur = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtfilmsure = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtyapımcı = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filmnamepnl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +89,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,22 +122,21 @@
             this.btnclose.Text = "X";
             this.btnclose.UseVisualStyleBackColor = false;
             // 
-            // txt_kullaniciadi
+            // txtfilmad
             // 
-            this.txt_kullaniciadi.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_kullaniciadi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_kullaniciadi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_kullaniciadi.Location = new System.Drawing.Point(120, 12);
-            this.txt_kullaniciadi.Name = "txt_kullaniciadi";
-            this.txt_kullaniciadi.Size = new System.Drawing.Size(361, 20);
-            this.txt_kullaniciadi.TabIndex = 8;
-
+            this.txtfilmad.BackColor = System.Drawing.SystemColors.Control;
+            this.txtfilmad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfilmad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtfilmad.Location = new System.Drawing.Point(120, 12);
+            this.txtfilmad.Name = "txtfilmad";
+            this.txtfilmad.Size = new System.Drawing.Size(361, 20);
+            this.txtfilmad.TabIndex = 8;
             // 
             // filmnamepnl
             // 
             this.filmnamepnl.BackColor = System.Drawing.SystemColors.Control;
             this.filmnamepnl.Controls.Add(this.label2);
-            this.filmnamepnl.Controls.Add(this.txt_kullaniciadi);
+            this.filmnamepnl.Controls.Add(this.txtfilmad);
             this.filmnamepnl.Location = new System.Drawing.Point(12, 109);
             this.filmnamepnl.Name = "filmnamepnl";
             this.filmnamepnl.Size = new System.Drawing.Size(489, 45);
@@ -144,27 +155,27 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.combofilmtur);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(12, 160);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(489, 45);
             this.panel2.TabIndex = 9;
             // 
-            // comboBox1
+            // combofilmtur
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.combofilmtur.BackColor = System.Drawing.SystemColors.Control;
+            this.combofilmtur.FormattingEnabled = true;
+            this.combofilmtur.Items.AddRange(new object[] {
             "Bilim-Kurgu",
             "Aksiyon",
             "Aile",
             "Komedi",
             "Animasyon"});
-            this.comboBox1.Location = new System.Drawing.Point(120, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 21);
-            this.comboBox1.TabIndex = 8;
+            this.combofilmtur.Location = new System.Drawing.Point(120, 14);
+            this.combofilmtur.Name = "combofilmtur";
+            this.combofilmtur.Size = new System.Drawing.Size(361, 21);
+            this.combofilmtur.TabIndex = 8;
             // 
             // label3
             // 
@@ -179,22 +190,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtfilmsure);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(12, 211);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(489, 45);
             this.panel3.TabIndex = 9;
             // 
-            // textBox2
+            // txtfilmsure
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(120, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(361, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtfilmsure.BackColor = System.Drawing.SystemColors.Control;
+            this.txtfilmsure.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfilmsure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtfilmsure.Location = new System.Drawing.Point(120, 11);
+            this.txtfilmsure.Name = "txtfilmsure";
+            this.txtfilmsure.Size = new System.Drawing.Size(361, 20);
+            this.txtfilmsure.TabIndex = 10;
             // 
             // label4
             // 
@@ -209,22 +220,22 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.txtyapımcı);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(12, 262);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(489, 45);
             this.panel4.TabIndex = 9;
             // 
-            // textBox3
+            // txtyapımcı
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(120, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(361, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtyapımcı.BackColor = System.Drawing.SystemColors.Control;
+            this.txtyapımcı.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtyapımcı.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtyapımcı.Location = new System.Drawing.Point(120, 13);
+            this.txtyapımcı.Name = "txtyapımcı";
+            this.txtyapımcı.Size = new System.Drawing.Size(361, 20);
+            this.txtyapımcı.TabIndex = 11;
             // 
             // label5
             // 
@@ -249,21 +260,22 @@
             this.button2.BackColor = System.Drawing.Color.SteelBlue;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(22, 369);
+            this.button2.Location = new System.Drawing.Point(15, 363);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 42);
+            this.button2.Size = new System.Drawing.Size(178, 46);
             this.button2.TabIndex = 12;
             this.button2.Text = "EKLE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SteelBlue;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(191, 369);
+            this.button3.Location = new System.Drawing.Point(215, 363);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 42);
+            this.button3.Size = new System.Drawing.Size(178, 46);
             this.button3.TabIndex = 13;
             this.button3.Text = "SİL";
             this.button3.UseVisualStyleBackColor = false;
@@ -273,37 +285,47 @@
             this.button4.BackColor = System.Drawing.Color.SteelBlue;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(360, 369);
+            this.button4.Location = new System.Drawing.Point(404, 363);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(163, 42);
+            this.button4.Size = new System.Drawing.Size(178, 46);
             this.button4.TabIndex = 14;
             this.button4.Text = "GÜNCELLE";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(605, 82);
+            this.pictureBox2.Location = new System.Drawing.Point(630, 75);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(293, 322);
+            this.pictureBox2.Size = new System.Drawing.Size(293, 292);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // button5
             // 
-            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.button5.BackColor = System.Drawing.Color.SteelBlue;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(689, 384);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(178, 46);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "AFİŞ EKLE";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 715);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -319,8 +341,10 @@
             this.Name = "AddMovie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddMovie";
+            this.Load += new System.EventHandler(this.AddMovie_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.filmnamepnl.ResumeLayout(false);
             this.filmnamepnl.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -331,7 +355,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,7 +366,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_kullaniciadi;
+        private System.Windows.Forms.TextBox txtfilmad;
         private System.Windows.Forms.Panel filmnamepnl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
@@ -352,13 +375,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtfilmsure;
+        private System.Windows.Forms.TextBox txtyapımcı;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combofilmtur;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
