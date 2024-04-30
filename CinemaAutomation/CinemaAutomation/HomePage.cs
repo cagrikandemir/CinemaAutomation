@@ -19,9 +19,7 @@ namespace CinemaAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 giris = new Form1();
-            giris.Show();
-            this.Close();
+            Application.Exit();
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -36,7 +34,8 @@ namespace CinemaAutomation
 
         private void btnanamenü_Click(object sender, EventArgs e)
         {
-
+            SeansSaat seansEkleSaat = new SeansSaat();
+            seansEkleSaat.ShowDialog();
         }
 
         private void bnfilmekle_Click(object sender, EventArgs e)
@@ -49,6 +48,12 @@ namespace CinemaAutomation
         {
             AddSln frm=new AddSln();
             frm.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SeansEkle Seans=new SeansEkle();
+            Seans.ShowDialog();
         }
     }
 }

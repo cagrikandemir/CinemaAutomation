@@ -5,13 +5,24 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CinemaAutomation
 {
-    internal class Film
+    internal class Saat
     {
-        public void FilmEkle(string query)
+
+        public void SaatEkle(string query)
+        {
+            baglanti myconnection= new baglanti();
+            SqlConnection baglanti = myconnection.Getconnect();
+            SqlCommand komut = new SqlCommand();
+            komut.Connection = baglanti;
+            baglanti.Open();
+            komut.CommandText = query;
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+        }
+        public void SaatSil(string query)
         {
             baglanti myconnection = new baglanti();
             SqlConnection baglanti = myconnection.Getconnect();
@@ -23,7 +34,7 @@ namespace CinemaAutomation
             baglanti.Close();
 
         }
-        public DataSet FilmGetir(string query)
+        public DataSet SaatGetir(string query)
         {
             baglanti myconnection = new baglanti();
             SqlConnection baglanti = myconnection.Getconnect();
@@ -35,28 +46,17 @@ namespace CinemaAutomation
             sda.Fill(ds);
             return ds;
         }
-        public void FilmSil(string query)
+        public void SaatGuncelle(string query)
         {
-            baglanti myconnection= new baglanti();
-            SqlConnection baglanti=myconnection.Getconnect();
+            baglanti myconnection = new baglanti();
+            SqlConnection baglanti = myconnection.Getconnect();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;
             baglanti.Open();
             komut.CommandText = query;
             komut.ExecuteNonQuery();
             baglanti.Close();
+        }
 
-        }
-        public void Filmguncelle(string query)
-        {
-            baglanti myconnection=new baglanti();
-            SqlConnection baglanti = myconnection.Getconnect();
-            SqlCommand komut= new SqlCommand();
-            komut.Connection = baglanti;
-            baglanti.Open();
-            komut.CommandText = query;
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-        }
     }
 }

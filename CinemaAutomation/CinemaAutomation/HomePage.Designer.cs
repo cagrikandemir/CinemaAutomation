@@ -107,7 +107,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Controls.Add(this.button2);
-            this.panel7.Location = new System.Drawing.Point(2, 223);
+            this.panel7.Location = new System.Drawing.Point(2, 301);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(249, 42);
             this.panel7.TabIndex = 4;
@@ -132,7 +132,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.btnanamenü);
-            this.panel3.Location = new System.Drawing.Point(0, 51);
+            this.panel3.Location = new System.Drawing.Point(0, 129);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(249, 42);
             this.panel3.TabIndex = 3;
@@ -150,7 +150,7 @@
             this.btnanamenü.Name = "btnanamenü";
             this.btnanamenü.Size = new System.Drawing.Size(249, 40);
             this.btnanamenü.TabIndex = 0;
-            this.btnanamenü.Text = "ANA MENÜ";
+            this.btnanamenü.Text = "SEANS SAATLERİ";
             this.btnanamenü.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnanamenü.UseVisualStyleBackColor = false;
             this.btnanamenü.Click += new System.EventHandler(this.btnanamenü_Click);
@@ -159,7 +159,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.bnfilmekle);
-            this.panel4.Location = new System.Drawing.Point(0, 91);
+            this.panel4.Location = new System.Drawing.Point(0, 169);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(249, 42);
             this.panel4.TabIndex = 3;
@@ -187,7 +187,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.button1);
-            this.panel6.Location = new System.Drawing.Point(2, 181);
+            this.panel6.Location = new System.Drawing.Point(2, 259);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(249, 42);
             this.panel6.TabIndex = 4;
@@ -207,12 +207,13 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "SEANS EKLE";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.btnsalonekle);
-            this.panel5.Location = new System.Drawing.Point(3, 136);
+            this.panel5.Location = new System.Drawing.Point(3, 214);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(249, 42);
             this.panel5.TabIndex = 3;

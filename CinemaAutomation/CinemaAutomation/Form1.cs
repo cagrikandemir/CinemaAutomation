@@ -66,5 +66,10 @@ namespace CinemaAutomation
         {
 
         }
+
+        private void txt_kullaniciadi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

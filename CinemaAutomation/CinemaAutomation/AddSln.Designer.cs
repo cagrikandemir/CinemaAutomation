@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnclosee = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,24 +42,24 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnclosee
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(511, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnclosee.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnclosee.FlatAppearance.BorderSize = 0;
+            this.btnclosee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclosee.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnclosee.Location = new System.Drawing.Point(511, 0);
+            this.btnclosee.Name = "btnclosee";
+            this.btnclosee.Size = new System.Drawing.Size(47, 48);
+            this.btnclosee.TabIndex = 5;
+            this.btnclosee.Text = "X";
+            this.btnclosee.UseVisualStyleBackColor = false;
+            this.btnclosee.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnclosee);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnclose);
@@ -171,7 +171,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnclosee;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;

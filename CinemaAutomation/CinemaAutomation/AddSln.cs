@@ -21,7 +21,9 @@ namespace CinemaAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            HomePage home = new HomePage();
+            home.Show();
+            this.Close();
         }
 
         private void txt_kullaniciadi_MouseUp(object sender, MouseEventArgs e)

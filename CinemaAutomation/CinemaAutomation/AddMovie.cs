@@ -19,24 +19,33 @@ namespace CinemaAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            HomePage home=new HomePage();
+            home.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query="insert into Film_Bilgi values('"+txtfilmad.Text+"','"+combofilmtur.SelectedText+"','"+txtfilmsure.Text+"','"+txtyapımcı.Text+"','"+pictureBox2.ImageLocation+"')";
-            Film flm=new Film();
-            try
+            if (txtfilmad.Text == "")
             {
-                flm.FilmEkle(query);
-                MessageBox.Show("Film Başarıyla Eklendi");
-                Temizle();
-                Filmler();
-
+                MessageBox.Show("Bilgileri Girmeden Film Ekleyemezsiniz", "Hata");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Önceden Kayıtlı Olan Film");
+                string query = "insert into Film_Bilgi values('" + txtfilmad.Text + "','" + combofilmtur.Text + "','" + txtfilmsure.Text + "','" + txtyapımcı.Text + "','" + pictureBox2.ImageLocation + "')";
+                Film flm = new Film();
+                try
+                {
+                    flm.FilmEkle(query);
+                    MessageBox.Show("Film Başarıyla Eklendi");
+                    Temizle();
+                    Filmler();
+
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
@@ -48,6 +57,8 @@ namespace CinemaAutomation
 
         private void AddMovie_Load(object sender, EventArgs e)
         {
+            txtfilmad.BackColor = Color.White;
+            filmnamepnl.BackColor = Color.White;
             Filmler();
            
         }
@@ -65,6 +76,109 @@ namespace CinemaAutomation
             txtyapımcı.Text = "";
             combofilmtur.Text = "";
         }
-        
+        int key = 0;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Film flm = new Film();
+            if (key == 0)
+                MessageBox.Show("Lütfen Silmek İstediğiniz Filmi Seçiniz", "Uyarı");
+            else
+            {
+                try
+                {
+                    string query = "delete from Film_Bilgi where filmıd =" + key +"";
+                    flm.FilmSil(query);
+                    MessageBox.Show("Seçilen Film Başarıyla Silindi", "Başarılı");
+                    Filmler();
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtfilmad.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            combofilmtur.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtfilmsure.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtyapımcı.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            if (txtfilmad.Text=="")
+                key= 0;
+
+            else
+                key = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            
+        }
+
+        private void txtfilmad_Click(object sender, EventArgs e)
+        {
+            txtfilmad.BackColor = Color.White;
+            filmnamepnl.BackColor = Color.White;
+            panel2.BackColor = SystemColors.Control;
+            panel3.BackColor = SystemColors.Control;
+            panel4.BackColor = SystemColors.Control;
+            txtfilmsure.BackColor = SystemColors.Control;
+            txtyapımcı.BackColor = SystemColors.Control;
+            combofilmtur.BackColor = SystemColors.Control;
+        }
+
+        private void combofilmtur_Click(object sender, EventArgs e)
+        {
+            combofilmtur.BackColor = Color.White;
+            panel2.BackColor = Color.White;
+            filmnamepnl.BackColor = SystemColors.Control;
+            txtfilmad.BackColor= SystemColors.Control;
+            panel3.BackColor = SystemColors.Control;
+            panel4.BackColor = SystemColors.Control;
+            txtfilmsure.BackColor = SystemColors.Control;
+            txtyapımcı.BackColor = SystemColors.Control;
+        }
+        private void txtfilmsure_Click(object sender, EventArgs e)
+        {
+            txtfilmsure.BackColor = Color.White;
+            panel3.BackColor = Color.White;
+            panel2.BackColor = SystemColors.Control;
+            panel4.BackColor = SystemColors.Control;
+            txtfilmad.BackColor = SystemColors.Control;
+            filmnamepnl.BackColor = SystemColors.Control;
+            txtyapımcı.BackColor = SystemColors.Control;
+            combofilmtur.BackColor = SystemColors.Control;
+        }
+
+        private void txtyapımcı_Click(object sender, EventArgs e)
+        {
+            txtyapımcı.BackColor = Color.White;
+            panel4.BackColor = Color.White;
+            panel3.BackColor = SystemColors.Control;
+            panel2.BackColor = SystemColors.Control;
+            filmnamepnl.BackColor = SystemColors.Control;
+            txtfilmad.BackColor = SystemColors.Control;
+            filmnamepnl.BackColor = SystemColors.Control;
+            combofilmtur.BackColor = SystemColors.Control;
+            txtfilmsure.BackColor= SystemColors.Control;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Film flm = new Film();
+            if (key == 0)
+                MessageBox.Show("Lütfen Güncellemek İçin Film Seçiniz", "Hata");
+            else
+            {
+                try
+                {
+                    string query = "update Film_Bilgi set filmad='" + txtfilmad.Text + "',filmtur='" + combofilmtur.Text + "',filmsure='" + txtfilmsure.Text + "',yapimci='" + txtyapımcı.Text + "' where filmıd=" + key + ";";
+                    flm.Filmguncelle(query);
+                    MessageBox.Show("Seçilen Film Başarıyla Güncellendi", "Başarılı");
+                    Filmler();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
             this.txtfilmad = new System.Windows.Forms.TextBox();
@@ -46,20 +45,27 @@
             this.txtyapımcı = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnekle = new System.Windows.Forms.Button();
+            this.btnsil = new System.Windows.Forms.Button();
+            this.btngüncelle = new System.Windows.Forms.Button();
+            this.btnafis = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.filmıd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmtur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmsure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yapimci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.filmnamepnl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,16 +95,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -126,11 +122,12 @@
             // 
             this.txtfilmad.BackColor = System.Drawing.SystemColors.Control;
             this.txtfilmad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtfilmad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtfilmad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtfilmad.Location = new System.Drawing.Point(120, 12);
             this.txtfilmad.Name = "txtfilmad";
             this.txtfilmad.Size = new System.Drawing.Size(361, 20);
             this.txtfilmad.TabIndex = 8;
+            this.txtfilmad.Click += new System.EventHandler(this.txtfilmad_Click);
             // 
             // filmnamepnl
             // 
@@ -164,7 +161,7 @@
             // 
             // combofilmtur
             // 
-            this.combofilmtur.BackColor = System.Drawing.SystemColors.Control;
+            this.combofilmtur.BackColor = System.Drawing.Color.White;
             this.combofilmtur.FormattingEnabled = true;
             this.combofilmtur.Items.AddRange(new object[] {
             "Bilim-Kurgu",
@@ -176,6 +173,7 @@
             this.combofilmtur.Name = "combofilmtur";
             this.combofilmtur.Size = new System.Drawing.Size(361, 21);
             this.combofilmtur.TabIndex = 8;
+            this.combofilmtur.Click += new System.EventHandler(this.combofilmtur_Click);
             // 
             // label3
             // 
@@ -206,6 +204,7 @@
             this.txtfilmsure.Name = "txtfilmsure";
             this.txtfilmsure.Size = new System.Drawing.Size(361, 20);
             this.txtfilmsure.TabIndex = 10;
+            this.txtfilmsure.Click += new System.EventHandler(this.txtfilmsure_Click);
             // 
             // label4
             // 
@@ -236,6 +235,7 @@
             this.txtyapımcı.Name = "txtyapımcı";
             this.txtyapımcı.Size = new System.Drawing.Size(361, 20);
             this.txtyapımcı.TabIndex = 11;
+            this.txtyapımcı.Click += new System.EventHandler(this.txtyapımcı_Click);
             // 
             // label5
             // 
@@ -249,48 +249,112 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmıd,
+            this.filmad,
+            this.filmtur,
+            this.filmsure,
+            this.yapimci,
+            this.resim});
             this.dataGridView1.Location = new System.Drawing.Point(12, 448);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(943, 255);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // button2
+            // btnekle
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(15, 363);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 46);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "EKLE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnekle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnekle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnekle.ForeColor = System.Drawing.Color.White;
+            this.btnekle.Location = new System.Drawing.Point(15, 363);
+            this.btnekle.Name = "btnekle";
+            this.btnekle.Size = new System.Drawing.Size(178, 46);
+            this.btnekle.TabIndex = 12;
+            this.btnekle.Text = "EKLE";
+            this.btnekle.UseVisualStyleBackColor = false;
+            this.btnekle.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnsil
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(215, 363);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 46);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "SİL";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnsil.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnsil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnsil.ForeColor = System.Drawing.Color.White;
+            this.btnsil.Location = new System.Drawing.Point(215, 363);
+            this.btnsil.Name = "btnsil";
+            this.btnsil.Size = new System.Drawing.Size(178, 46);
+            this.btnsil.TabIndex = 13;
+            this.btnsil.Text = "SİL";
+            this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btngüncelle
             // 
-            this.button4.BackColor = System.Drawing.Color.SteelBlue;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(404, 363);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 46);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "GÜNCELLE";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btngüncelle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btngüncelle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btngüncelle.ForeColor = System.Drawing.Color.White;
+            this.btngüncelle.Location = new System.Drawing.Point(404, 363);
+            this.btngüncelle.Name = "btngüncelle";
+            this.btngüncelle.Size = new System.Drawing.Size(178, 46);
+            this.btngüncelle.TabIndex = 14;
+            this.btngüncelle.Text = "GÜNCELLE";
+            this.btngüncelle.UseVisualStyleBackColor = false;
+            this.btngüncelle.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnafis
+            // 
+            this.btnafis.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnafis.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnafis.ForeColor = System.Drawing.Color.White;
+            this.btnafis.Location = new System.Drawing.Point(689, 384);
+            this.btnafis.Name = "btnafis";
+            this.btnafis.Size = new System.Drawing.Size(178, 46);
+            this.btnafis.TabIndex = 15;
+            this.btnafis.Text = "AFİŞ EKLE";
+            this.btnafis.UseVisualStyleBackColor = false;
+            this.btnafis.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // filmıd
+            // 
+            this.filmıd.DataPropertyName = "filmıd";
+            this.filmıd.HeaderText = "Film ID";
+            this.filmıd.Name = "filmıd";
+            // 
+            // filmad
+            // 
+            this.filmad.DataPropertyName = "filmad";
+            this.filmad.HeaderText = "Film İsmi";
+            this.filmad.Name = "filmad";
+            // 
+            // filmtur
+            // 
+            this.filmtur.DataPropertyName = "filmtur";
+            this.filmtur.HeaderText = "Film Türü";
+            this.filmtur.Name = "filmtur";
+            // 
+            // filmsure
+            // 
+            this.filmsure.DataPropertyName = "filmsure";
+            this.filmsure.HeaderText = "Film Süresi(dk)";
+            this.filmsure.Name = "filmsure";
+            // 
+            // yapimci
+            // 
+            this.yapimci.DataPropertyName = "yapimci";
+            this.yapimci.HeaderText = "Yapımcı";
+            this.yapimci.Name = "yapimci";
+            // 
+            // resim
+            // 
+            this.resim.DataPropertyName = "resim";
+            this.resim.HeaderText = "Resim";
+            this.resim.Name = "resim";
             // 
             // pictureBox2
             // 
@@ -303,32 +367,25 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // button5
+            // pictureBox1
             // 
-            this.button5.BackColor = System.Drawing.Color.SteelBlue;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(689, 384);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 46);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "AFİŞ EKLE";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 715);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnafis);
+            this.Controls.Add(this.btngüncelle);
+            this.Controls.Add(this.btnsil);
+            this.Controls.Add(this.btnekle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel4);
@@ -344,7 +401,6 @@
             this.Load += new System.EventHandler(this.AddMovie_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.filmnamepnl.ResumeLayout(false);
             this.filmnamepnl.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -355,6 +411,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,11 +436,17 @@
         private System.Windows.Forms.TextBox txtyapımcı;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnekle;
+        private System.Windows.Forms.Button btnsil;
+        private System.Windows.Forms.Button btngüncelle;
         private System.Windows.Forms.ComboBox combofilmtur;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnafis;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmıd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmtur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmsure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yapimci;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resim;
     }
 }

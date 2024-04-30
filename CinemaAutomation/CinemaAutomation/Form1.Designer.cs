@@ -281,6 +281,7 @@
             this.txt_kullaniciadi.Size = new System.Drawing.Size(380, 20);
             this.txt_kullaniciadi.TabIndex = 8;
             this.txt_kullaniciadi.Click += new System.EventHandler(this.txt_kullaniciadi_Click);
+            this.txt_kullaniciadi.TextChanged += new System.EventHandler(this.txt_kullaniciadi_TextChanged);
             // 
             // pictureBox2
             // 
