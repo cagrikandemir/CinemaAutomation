@@ -37,9 +37,15 @@
             this.txtslnad = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnekle = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.salonıd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalonAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnsil = new System.Windows.Forms.Button();
+            this.btngüncelle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnclosee
@@ -48,7 +54,7 @@
             this.btnclosee.FlatAppearance.BorderSize = 0;
             this.btnclosee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclosee.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnclosee.Location = new System.Drawing.Point(511, 0);
+            this.btnclosee.Location = new System.Drawing.Point(714, 0);
             this.btnclosee.Name = "btnclosee";
             this.btnclosee.Size = new System.Drawing.Size(47, 48);
             this.btnclosee.TabIndex = 5;
@@ -66,7 +72,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(563, 48);
+            this.panel1.Size = new System.Drawing.Size(761, 48);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -116,10 +122,10 @@
             // 
             this.txtslnad.BackColor = System.Drawing.SystemColors.Control;
             this.txtslnad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtslnad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtslnad.Location = new System.Drawing.Point(120, 12);
+            this.txtslnad.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtslnad.Location = new System.Drawing.Point(121, 10);
             this.txtslnad.Name = "txtslnad";
-            this.txtslnad.Size = new System.Drawing.Size(361, 20);
+            this.txtslnad.Size = new System.Drawing.Size(195, 26);
             this.txtslnad.TabIndex = 8;
             this.txtslnad.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txt_kullaniciadi_MouseUp);
             // 
@@ -128,9 +134,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtslnad);
-            this.panel2.Location = new System.Drawing.Point(12, 128);
+            this.panel2.Location = new System.Drawing.Point(405, 182);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(489, 45);
+            this.panel2.Size = new System.Drawing.Size(323, 45);
             this.panel2.TabIndex = 7;
             // 
             // btnekle
@@ -138,7 +144,7 @@
             this.btnekle.BackColor = System.Drawing.Color.SteelBlue;
             this.btnekle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnekle.ForeColor = System.Drawing.Color.White;
-            this.btnekle.Location = new System.Drawing.Point(12, 201);
+            this.btnekle.Location = new System.Drawing.Point(396, 279);
             this.btnekle.Name = "btnekle";
             this.btnekle.Size = new System.Drawing.Size(163, 42);
             this.btnekle.TabIndex = 13;
@@ -146,16 +152,70 @@
             this.btnekle.UseVisualStyleBackColor = false;
             this.btnekle.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.salonıd,
+            this.SalonAd});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(355, 384);
+            this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // salonıd
+            // 
+            this.salonıd.DataPropertyName = "salonıd";
+            this.salonıd.HeaderText = "Salon ID";
+            this.salonıd.Name = "salonıd";
+            // 
+            // SalonAd
+            // 
+            this.SalonAd.DataPropertyName = "SalonAd";
+            this.SalonAd.HeaderText = "Salon İsmi";
+            this.SalonAd.Name = "SalonAd";
+            // 
+            // btnsil
+            // 
+            this.btnsil.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnsil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnsil.ForeColor = System.Drawing.Color.White;
+            this.btnsil.Location = new System.Drawing.Point(565, 279);
+            this.btnsil.Name = "btnsil";
+            this.btnsil.Size = new System.Drawing.Size(163, 42);
+            this.btnsil.TabIndex = 24;
+            this.btnsil.Text = "SİL";
+            this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btngüncelle
+            // 
+            this.btngüncelle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btngüncelle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btngüncelle.ForeColor = System.Drawing.Color.White;
+            this.btngüncelle.Location = new System.Drawing.Point(483, 327);
+            this.btngüncelle.Name = "btngüncelle";
+            this.btngüncelle.Size = new System.Drawing.Size(163, 42);
+            this.btngüncelle.TabIndex = 25;
+            this.btngüncelle.Text = "GÜNCELLE";
+            this.btngüncelle.UseVisualStyleBackColor = false;
+            this.btngüncelle.Click += new System.EventHandler(this.btngüncelle_Click);
+            // 
             // AddSln
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
+            this.Controls.Add(this.btngüncelle);
+            this.Controls.Add(this.btnsil);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(800, 300);
+            this.Location = new System.Drawing.Point(700, 300);
             this.Name = "AddSln";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddSln";
@@ -165,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +241,10 @@
         private System.Windows.Forms.TextBox txtslnad;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnekle;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salonıd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SalonAd;
+        private System.Windows.Forms.Button btnsil;
+        private System.Windows.Forms.Button btngüncelle;
     }
 }

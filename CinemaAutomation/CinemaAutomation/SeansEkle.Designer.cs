@@ -37,12 +37,8 @@
             this.btnsil = new System.Windows.Forms.Button();
             this.btnekle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SeansId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Film_ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Film_Tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Film_Saat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.combofilmtur = new System.Windows.Forms.ComboBox();
+            this.combotur = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filmnamepnl = new System.Windows.Forms.Panel();
             this.combofilmisim = new System.Windows.Forms.ComboBox();
@@ -53,6 +49,15 @@
             this.comboseanssaat = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.combosalon = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.SeansId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Film_ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Film_Tarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Film_Saat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Film_Salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Film_Tur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,6 +65,7 @@
             this.filmnamepnl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 48);
+            this.panel1.Size = new System.Drawing.Size(983, 48);
             this.panel1.TabIndex = 3;
             // 
             // button1
@@ -91,7 +97,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(847, 0);
+            this.button1.Location = new System.Drawing.Point(936, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 48);
             this.button1.TabIndex = 5;
@@ -127,36 +133,39 @@
             this.btngüncelle.BackColor = System.Drawing.Color.SteelBlue;
             this.btngüncelle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btngüncelle.ForeColor = System.Drawing.Color.White;
-            this.btngüncelle.Location = new System.Drawing.Point(594, 454);
+            this.btngüncelle.Location = new System.Drawing.Point(693, 460);
             this.btngüncelle.Name = "btngüncelle";
             this.btngüncelle.Size = new System.Drawing.Size(178, 46);
             this.btngüncelle.TabIndex = 22;
             this.btngüncelle.Text = "GÜNCELLE";
             this.btngüncelle.UseVisualStyleBackColor = false;
+            this.btngüncelle.Click += new System.EventHandler(this.btngüncelle_Click);
             // 
             // btnsil
             // 
             this.btnsil.BackColor = System.Drawing.Color.SteelBlue;
             this.btnsil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnsil.ForeColor = System.Drawing.Color.White;
-            this.btnsil.Location = new System.Drawing.Point(678, 393);
+            this.btnsil.Location = new System.Drawing.Point(777, 399);
             this.btnsil.Name = "btnsil";
             this.btnsil.Size = new System.Drawing.Size(178, 46);
             this.btnsil.TabIndex = 21;
             this.btnsil.Text = "SİL";
             this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btnekle
             // 
             this.btnekle.BackColor = System.Drawing.Color.SteelBlue;
             this.btnekle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnekle.ForeColor = System.Drawing.Color.White;
-            this.btnekle.Location = new System.Drawing.Point(494, 393);
+            this.btnekle.Location = new System.Drawing.Point(593, 399);
             this.btnekle.Name = "btnekle";
             this.btnekle.Size = new System.Drawing.Size(178, 46);
             this.btnekle.TabIndex = 20;
             this.btnekle.Text = "EKLE";
             this.btnekle.UseVisualStyleBackColor = false;
+            this.btnekle.Click += new System.EventHandler(this.btnekle_Click);
             // 
             // dataGridView1
             // 
@@ -166,55 +175,35 @@
             this.SeansId,
             this.Film_ad,
             this.Film_Tarih,
-            this.Film_Saat});
+            this.Film_Saat,
+            this.Film_Salon,
+            this.Film_Tur});
             this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(439, 458);
+            this.dataGridView1.Size = new System.Drawing.Size(520, 458);
             this.dataGridView1.TabIndex = 19;
-            // 
-            // SeansId
-            // 
-            this.SeansId.DataPropertyName = "SeansId";
-            this.SeansId.HeaderText = "Seans ID";
-            this.SeansId.Name = "SeansId";
-            // 
-            // Film_ad
-            // 
-            this.Film_ad.DataPropertyName = "Film_ad";
-            this.Film_ad.HeaderText = "Film Ad";
-            this.Film_ad.Name = "Film_ad";
-            // 
-            // Film_Tarih
-            // 
-            this.Film_Tarih.DataPropertyName = "Film_Tarih";
-            this.Film_Tarih.HeaderText = "Film Tarihi";
-            this.Film_Tarih.Name = "Film_Tarih";
-            // 
-            // Film_Saat
-            // 
-            this.Film_Saat.DataPropertyName = "Film_Saat";
-            this.Film_Saat.HeaderText = "Film Saati";
-            this.Film_Saat.Name = "Film_Saat";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.combofilmtur);
+            this.panel2.Controls.Add(this.combotur);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(457, 186);
+            this.panel2.Location = new System.Drawing.Point(538, 159);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(433, 45);
             this.panel2.TabIndex = 18;
             // 
-            // combofilmtur
+            // combotur
             // 
-            this.combofilmtur.BackColor = System.Drawing.Color.White;
-            this.combofilmtur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.combofilmtur.FormattingEnabled = true;
-            this.combofilmtur.Location = new System.Drawing.Point(104, 8);
-            this.combofilmtur.Name = "combofilmtur";
-            this.combofilmtur.Size = new System.Drawing.Size(313, 29);
-            this.combofilmtur.TabIndex = 8;
+            this.combotur.BackColor = System.Drawing.Color.White;
+            this.combotur.Enabled = false;
+            this.combotur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.combotur.FormattingEnabled = true;
+            this.combotur.Location = new System.Drawing.Point(104, 9);
+            this.combotur.Name = "combotur";
+            this.combotur.Size = new System.Drawing.Size(313, 29);
+            this.combotur.TabIndex = 10;
             // 
             // label3
             // 
@@ -231,7 +220,7 @@
             this.filmnamepnl.BackColor = System.Drawing.SystemColors.Control;
             this.filmnamepnl.Controls.Add(this.combofilmisim);
             this.filmnamepnl.Controls.Add(this.label2);
-            this.filmnamepnl.Location = new System.Drawing.Point(457, 135);
+            this.filmnamepnl.Location = new System.Drawing.Point(538, 108);
             this.filmnamepnl.Name = "filmnamepnl";
             this.filmnamepnl.Size = new System.Drawing.Size(433, 45);
             this.filmnamepnl.TabIndex = 15;
@@ -239,12 +228,14 @@
             // combofilmisim
             // 
             this.combofilmisim.BackColor = System.Drawing.Color.White;
+            this.combofilmisim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combofilmisim.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.combofilmisim.FormattingEnabled = true;
             this.combofilmisim.Location = new System.Drawing.Point(104, 8);
             this.combofilmisim.Name = "combofilmisim";
             this.combofilmisim.Size = new System.Drawing.Size(313, 29);
             this.combofilmisim.TabIndex = 9;
+            this.combofilmisim.SelectionChangeCommitted += new System.EventHandler(this.combofilmisim_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -261,7 +252,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.dateTimePicker1);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(457, 237);
+            this.panel4.Location = new System.Drawing.Point(538, 210);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(433, 45);
             this.panel4.TabIndex = 19;
@@ -289,6 +280,7 @@
             // comboseanssaat
             // 
             this.comboseanssaat.BackColor = System.Drawing.Color.White;
+            this.comboseanssaat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboseanssaat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.comboseanssaat.FormattingEnabled = true;
             this.comboseanssaat.Location = new System.Drawing.Point(104, 8);
@@ -311,16 +303,84 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.comboseanssaat);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(457, 288);
+            this.panel3.Location = new System.Drawing.Point(538, 261);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(433, 45);
             this.panel3.TabIndex = 16;
+            // 
+            // combosalon
+            // 
+            this.combosalon.BackColor = System.Drawing.Color.White;
+            this.combosalon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combosalon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.combosalon.FormattingEnabled = true;
+            this.combosalon.Location = new System.Drawing.Point(104, 8);
+            this.combosalon.Name = "combosalon";
+            this.combosalon.Size = new System.Drawing.Size(313, 29);
+            this.combosalon.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(29, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 21);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Salon :";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Controls.Add(this.combosalon);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(538, 312);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(433, 45);
+            this.panel5.TabIndex = 17;
+            // 
+            // SeansId
+            // 
+            this.SeansId.DataPropertyName = "SeansId";
+            this.SeansId.HeaderText = "Seans ID";
+            this.SeansId.Name = "SeansId";
+            // 
+            // Film_ad
+            // 
+            this.Film_ad.DataPropertyName = "Film_ad";
+            this.Film_ad.HeaderText = "Film Ad";
+            this.Film_ad.Name = "Film_ad";
+            // 
+            // Film_Tarih
+            // 
+            this.Film_Tarih.DataPropertyName = "Film_Tarih";
+            this.Film_Tarih.HeaderText = "Film Tarihi";
+            this.Film_Tarih.Name = "Film_Tarih";
+            // 
+            // Film_Saat
+            // 
+            this.Film_Saat.DataPropertyName = "Film_Saat";
+            this.Film_Saat.HeaderText = "Film Saati";
+            this.Film_Saat.Name = "Film_Saat";
+            // 
+            // Film_Salon
+            // 
+            this.Film_Salon.DataPropertyName = "Film_Salon";
+            this.Film_Salon.HeaderText = "Salon";
+            this.Film_Salon.Name = "Film_Salon";
+            // 
+            // Film_Tur
+            // 
+            this.Film_Tur.DataPropertyName = "Film_Tur";
+            this.Film_Tur.HeaderText = "Film Türü";
+            this.Film_Tur.Name = "Film_Tur";
             // 
             // SeansEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 536);
+            this.ClientSize = new System.Drawing.Size(983, 552);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btngüncelle);
@@ -348,6 +408,8 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,7 +426,6 @@
         private System.Windows.Forms.Button btnekle;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox combofilmtur;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel filmnamepnl;
         private System.Windows.Forms.Label label2;
@@ -372,12 +433,18 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboseanssaat;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox combotur;
+        private System.Windows.Forms.ComboBox combosalon;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn SeansId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Film_ad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Film_Tarih;
         private System.Windows.Forms.DataGridViewTextBoxColumn Film_Saat;
-        private System.Windows.Forms.ComboBox comboseanssaat;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Film_Salon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Film_Tur;
     }
 }

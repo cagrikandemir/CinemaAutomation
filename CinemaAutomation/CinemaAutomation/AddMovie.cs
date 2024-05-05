@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,11 +27,7 @@ namespace CinemaAutomation
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtfilmad.Text == "")
-            {
-                MessageBox.Show("Bilgileri Girmeden Film Ekleyemezsiniz", "Hata");
-            }
-            else
+            if (txtfilmad.Text != "")
             {
                 string query = "insert into Film_Bilgi values('" + txtfilmad.Text + "','" + combofilmtur.Text + "','" + txtfilmsure.Text + "','" + txtyapımcı.Text + "','" + pictureBox2.ImageLocation + "')";
                 Film flm = new Film();
@@ -44,9 +41,12 @@ namespace CinemaAutomation
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show("İşlem Başarısız Aynı İsimde Film Mevcut", "Hata");
                 }
+                
             }
+            else
+                MessageBox.Show("Bilgileri Girmeden Film Ekleyemezsiniz", "Hata");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -54,12 +54,27 @@ namespace CinemaAutomation
             openFileDialog1.ShowDialog();
             pictureBox2.ImageLocation = openFileDialog1.FileName;
         }
-
+        baglanti mycon=new baglanti();
+        private void Filmturgetir()
+        {
+            SqlConnection baglanti = mycon.Getconnect();
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select filmtur from Filmtur_Bilgi", baglanti);
+            SqlDataReader rdr;
+            rdr = komut.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("filmtur", typeof(string));
+            dt.Load(rdr);
+            combofilmtur.ValueMember = "filmtur";
+            combofilmtur.DataSource = dt;
+            baglanti.Close();
+        }
         private void AddMovie_Load(object sender, EventArgs e)
         {
             txtfilmad.BackColor = Color.White;
             filmnamepnl.BackColor = Color.White;
             Filmler();
+            Filmturgetir();
            
         }
         void Filmler()
@@ -165,7 +180,7 @@ namespace CinemaAutomation
             Film flm = new Film();
             if (key == 0)
                 MessageBox.Show("Lütfen Güncellemek İçin Film Seçiniz", "Hata");
-            else
+            else if (txtfilmad.Text != "")
             {
                 try
                 {

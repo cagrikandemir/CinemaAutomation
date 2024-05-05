@@ -1,31 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace CinemaAutomation
 {
-    internal class salon
+    internal class Filmturleri
     {
-        public void SalonEkle(string query)
+
+        public void FilmTurEkle(string query)
         {
-            baglanti myconnection = new baglanti();
+            baglanti myconnection=new baglanti();
             SqlConnection baglanti = myconnection.Getconnect();
             SqlCommand komut = new SqlCommand();
-            komut.Connection = baglanti;
             baglanti.Open();
+            komut.Connection = baglanti;
             komut.CommandText = query;
             komut.ExecuteNonQuery();
             baglanti.Close();
         }
-
-        public DataSet SalonGetir(string query)
+        public DataSet FilmTurGetir(string query)
         {
-            baglanti myconnection=new baglanti();
-            SqlConnection baglanti=myconnection.Getconnect();
+            baglanti myconnection = new baglanti();
+            SqlConnection baglanti = myconnection.Getconnect();
             SqlCommand komut = new SqlCommand();
             komut.Connection = baglanti;
             komut.CommandText = query;
@@ -34,18 +34,8 @@ namespace CinemaAutomation
             sda.Fill(ds);
             return ds;
         }
-        public void SalonSil(string query) {
-            baglanti myconnection = new baglanti();
-            SqlConnection baglanti= myconnection.Getconnect();
-            SqlCommand komut = new SqlCommand();
-            baglanti.Open();
-            komut.Connection = baglanti;
-            komut.CommandText = query;
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-        }
-        public void SalonGuncelle(string query)
-        {
+        public void FilmTurSil(string query) {
+
             baglanti myconnection = new baglanti();
             SqlConnection baglanti = myconnection.Getconnect();
             SqlCommand komut = new SqlCommand();
@@ -55,5 +45,18 @@ namespace CinemaAutomation
             komut.ExecuteNonQuery();
             baglanti.Close();
         }
+        public void FilmGuncelle(string query)
+        {
+            baglanti myconnection=new baglanti();
+            SqlConnection baglanti=myconnection.Getconnect();
+            SqlCommand komut=new SqlCommand();
+            baglanti.Open();
+            komut.Connection = baglanti;
+            komut.CommandText = query;
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+
+        }
+
     }
 }

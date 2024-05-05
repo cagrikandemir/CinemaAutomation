@@ -30,7 +30,7 @@ namespace CinemaAutomation
                     saatler();
 
                 }
-                catch (Exception EX)
+                catch (Exception)
                 {
                     MessageBox.Show("Seans Mevcut Farklı Seans Eklemeyi Deneyin","Uyarı");
                 }

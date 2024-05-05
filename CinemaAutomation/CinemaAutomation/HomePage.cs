@@ -55,5 +55,11 @@ namespace CinemaAutomation
             SeansEkle Seans=new SeansEkle();
             Seans.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FilmTurekle flm=new FilmTurekle();
+            flm.ShowDialog();
+        }
     }
 }
