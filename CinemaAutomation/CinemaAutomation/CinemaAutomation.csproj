@@ -59,6 +59,12 @@
       <DependentUpon>AddSln.cs</DependentUpon>
     </Compile>
     <Compile Include="baglanti.cs" />
+    <Compile Include="BiletSatış.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BiletSatış.Designer.cs">
+      <DependentUpon>BiletSatış.cs</DependentUpon>
+    </Compile>
     <Compile Include="Film.cs" />
     <Compile Include="FilmTurekle.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSln.resx">
       <DependentUpon>AddSln.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BiletSatış.resx">
+      <DependentUpon>BiletSatış.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FilmTurekle.resx">
       <DependentUpon>FilmTurekle.cs</DependentUpon>

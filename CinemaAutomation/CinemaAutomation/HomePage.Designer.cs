@@ -30,7 +30,6 @@
         {
             this.btnclose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -43,14 +42,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnsalonekle = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnclose
@@ -59,7 +62,7 @@
             this.btnclose.FlatAppearance.BorderSize = 0;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnclose.Location = new System.Drawing.Point(1269, 0);
+            this.btnclose.Location = new System.Drawing.Point(1384, 0);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(47, 48);
             this.btnclose.TabIndex = 0;
@@ -76,18 +79,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1316, 48);
+            this.panel1.Size = new System.Drawing.Size(1431, 48);
             this.panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -102,6 +95,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
@@ -110,7 +104,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 785);
+            this.panel2.Size = new System.Drawing.Size(251, 831);
             this.panel2.TabIndex = 2;
             // 
             // panel7
@@ -246,12 +240,48 @@
             this.btnsalonekle.UseVisualStyleBackColor = false;
             this.btnsalonekle.Click += new System.EventHandler(this.btnsalonekle_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SteelBlue;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(249, 40);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "BİLET SATIŞ";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.button3);
+            this.panel8.Location = new System.Drawing.Point(0, 347);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(249, 42);
+            this.panel8.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CinemaAutomation.Properties.Resources.Clap_cinema;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1316, 833);
+            this.ClientSize = new System.Drawing.Size(1431, 879);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -261,13 +291,14 @@
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +320,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button3;
     }
 }
