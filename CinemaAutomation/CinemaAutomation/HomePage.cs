@@ -67,5 +67,11 @@ namespace CinemaAutomation
             BiletSatış bltsts = new BiletSatış();
             bltsts.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Satislar sts=new Satislar();
+            sts.ShowDialog();
+        }
     }
 }

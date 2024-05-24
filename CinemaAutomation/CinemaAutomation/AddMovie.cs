@@ -39,7 +39,7 @@ namespace CinemaAutomation
                     Filmler();
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("İşlem Başarısız Aynı İsimde Film Mevcut", "Hata");
                 }

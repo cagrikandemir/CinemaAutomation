@@ -9,8 +9,6 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace CinemaAutomation
 {
@@ -129,7 +127,7 @@ namespace CinemaAutomation
                     Reset();
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("İşlem Başarısız Eklemek İstenilen Seans Mevcut", "Hata");
                 }

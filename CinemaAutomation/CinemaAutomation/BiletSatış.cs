@@ -43,7 +43,7 @@ namespace CinemaAutomation
         {
             SqlConnection baglanti = Mycon.Getconnect();
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("select *from Seans_Bilgi where Film_Ad='" + combofilmisim.SelectedValue.ToString() + "' ", baglanti);
+            SqlCommand komut = new SqlCommand("select distinct Film_Salon from Seans_Bilgi where Film_Ad='" + combofilmisim.SelectedValue.ToString() + "' ", baglanti);
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(komut);
             sda.Fill(dt);
@@ -58,7 +58,7 @@ namespace CinemaAutomation
         {
             SqlConnection baglanti = Mycon.Getconnect();
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("select *from Seans_Bilgi where Film_Ad='" + combofilmisim.SelectedValue.ToString() +"' and Film_Salon='"+combosalonisim.SelectedValue.ToString()+"' ", baglanti);
+            SqlCommand komut = new SqlCommand("select distinct Film_Saat from Seans_Bilgi where Film_Ad='" + combofilmisim.SelectedValue.ToString() +"' and Film_Salon='"+combosalonisim.SelectedValue.ToString()+"' and Film_Tarih='"+combotarih.SelectedValue.ToString()+"' ", baglanti);
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(komut);
             sda.Fill(dt);
@@ -74,7 +74,7 @@ namespace CinemaAutomation
         {
             SqlConnection baglanti = Mycon.Getconnect();
             baglanti.Open();
-            SqlCommand komut=new SqlCommand("select *from Seans_Bilgi where Film_Ad='"+combofilmisim.SelectedValue.ToString()+"'and Film_Salon='"+combosalonisim.SelectedValue.ToString()+"'",baglanti);
+            SqlCommand komut=new SqlCommand("select distinct Film_Tarih from Seans_Bilgi where Film_Ad='"+combofilmisim.SelectedValue.ToString()+"'and Film_Salon='"+combosalonisim.SelectedValue.ToString()+"' ",baglanti);
             DataTable dt = new DataTable();
             SqlDataAdapter sda=new SqlDataAdapter(komut);
             sda.Fill(dt);
@@ -127,8 +127,129 @@ namespace CinemaAutomation
 
         private void combosalonisim_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            SeansSaat();
+            
             Film_Tarih();
+        }
+
+        private void combotarih_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            SeansSaat();
+        }
+        private void DoluKoltuk()
+        {         
+            SqlConnection baglanti = Mycon.Getconnect();
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select *from Satis_Bilgi where Film_İsim='" + combofilmisim.SelectedValue.ToString() + "' and Salon_İsim='" + combosalonisim.SelectedValue.ToString() + "'and Film_Tarih='" + combotarih.SelectedValue.ToString() + "'and Film_Saati='" + combosaat.SelectedValue.ToString() + "'",baglanti);
+            SqlDataReader rdr = komut.ExecuteReader();         
+            while(rdr.Read())
+            {
+                foreach (Control item in panel2.Controls)
+                {
+                    if(item is Button)
+                    {
+                        if (rdr["Koltuk_No"].ToString()==item.Text)
+                        {
+                            item.BackColor = Color.Red;
+                        }
+                       
+                    }
+                }
+               
+            }
+            baglanti.Close();
+            rdr.Close();
+            
+        }
+        private void yenilekoltuk()
+        {
+            foreach (Control item in panel2.Controls)
+            {
+                if(item is Button)
+                {
+                    item.BackColor = Color.White;
+                }
+            }
+        }
+        private void Biletİptal()
+        {
+            txtiptalno.Items.Clear();
+            txtiptalno.Text = "";
+            foreach (Control item in panel2.Controls)
+            {
+                if(item is Button)
+                {
+                    if(item.BackColor== Color.Red)
+                    {
+                        txtiptalno.Items.Add(item.Text);
+                    }
+                }
+            }
+        }
+        private void btnsat_Click(object sender, EventArgs e)
+        {
+            satis sts=new satis();
+            
+            if (txtkoltukno.Text != "")
+            {
+               
+                try
+                {
+                    
+                    string query = "insert into Satis_Bilgi values('" + combofilmisim.Text + "','" + combosalonisim.Text + "','" + combotarih.Text + "','" + combosaat.Text + "','" + txtkoltukno.Text + "','" + txtad.Text + "','" + txtsoyad.Text + "','" + txtucret.Text + "')";
+                    sts.SatisEkle(query);                 
+                    MessageBox.Show("Bilet Başarıyla Satıldı", "Başarılı");
+                    txtkoltukno.Text = "";
+                    txtad.Text = "";
+                    txtsoyad.Text = "";
+
+                    DoluKoltuk();
+                    Biletİptal();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Bilet Satılamadı Koltuk Dolu", "Hata");
+
+                }
+            }
+            else MessageBox.Show("Gerekli Yerler Doldurulmadan Bilet Satılamaz","Hata");
+        }
+
+        private void combosaat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            yenilekoltuk();
+            DoluKoltuk();
+            Biletİptal();
+   
+        }
+
+        private void combosaat_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btniptal_Click(object sender, EventArgs e)
+        {
+            satis sts= new satis();
+
+            if (txtiptalno.Text != "")
+            {
+
+                try
+                {
+                    string query = "delete from Satis_Bilgi where Koltuk_No='" + txtiptalno.Text + "'";
+                    sts.SatisSil(query);
+                    MessageBox.Show("Bilet Başarıyla Silindi", "Başarılı");
+                    
+                    yenilekoltuk();
+                    DoluKoltuk();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bilet Silinemedi", "Hata");
+                }
+            }
+            else MessageBox.Show("Lütfen Silmek İstediğiniz Koltuk Numarasını Seçiniz", "Uyarı");
         }
     }
 }

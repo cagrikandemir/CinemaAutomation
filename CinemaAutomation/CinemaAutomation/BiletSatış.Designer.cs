@@ -197,6 +197,7 @@
             this.btniptal.TabIndex = 25;
             this.btniptal.Text = "BİLET İPTAL";
             this.btniptal.UseVisualStyleBackColor = false;
+            this.btniptal.Click += new System.EventHandler(this.btniptal_Click);
             // 
             // panel11
             // 
@@ -259,6 +260,7 @@
             this.btnsat.TabIndex = 24;
             this.btnsat.Text = "BİLET SAT";
             this.btnsat.UseVisualStyleBackColor = false;
+            this.btnsat.Click += new System.EventHandler(this.btnsat_Click);
             // 
             // panel5
             // 
@@ -435,6 +437,7 @@
             this.combotarih.Name = "combotarih";
             this.combotarih.Size = new System.Drawing.Size(313, 29);
             this.combotarih.TabIndex = 9;
+            this.combotarih.SelectionChangeCommitted += new System.EventHandler(this.combotarih_SelectionChangeCommitted);
             // 
             // label18
             // 
@@ -495,6 +498,8 @@
             this.combosaat.Name = "combosaat";
             this.combosaat.Size = new System.Drawing.Size(313, 29);
             this.combosaat.TabIndex = 9;
+            this.combosaat.SelectedIndexChanged += new System.EventHandler(this.combosaat_SelectedIndexChanged);
+            this.combosaat.SelectionChangeCommitted += new System.EventHandler(this.combosaat_SelectionChangeCommitted);
             // 
             // label17
             // 
