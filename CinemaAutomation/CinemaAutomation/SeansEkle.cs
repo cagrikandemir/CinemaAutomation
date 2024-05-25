@@ -115,26 +115,39 @@ namespace CinemaAutomation
         private void btnekle_Click(object sender, EventArgs e)
         {
             Seans sns = new Seans();
+
             if (combofilmisim.Text != "")
             {
-                string query = "insert into Seans_Bilgi values('" + combofilmisim.Text + "','"+combotur.Text+"','" + dateTimePicker1.Text + "','" + comboseanssaat.Text + "','" + combosalon.Text + "')";
-                
+                string filmAd = combofilmisim.Text;
+                string filmTur = combotur.Text;
+                string filmTarih = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                string filmSaat = comboseanssaat.Text;
+                string filmSalon = combosalon.Text;
+
+                if (sns.SeansVarMi(filmAd, filmTur, filmTarih, filmSaat, filmSalon))
+                {
+                    MessageBox.Show("İşlem Başarısız Eklemek İstenilen Seans Mevcut", "Hata");
+                    return;
+                }
+
+
                 try
                 {
+                    string query = $"INSERT INTO Seans_Bilgi (Film_Ad, Film_Tur, Film_Tarih, Film_Saat, Film_Salon) VALUES ('{filmAd}', '{filmTur}', '{filmTarih}', '{filmSaat}', '{filmSalon}')";
                     sns.SeansEkle(query);
-                    MessageBox.Show("Seans Başarıyla Eklendi","Başarılı");
+                    MessageBox.Show("Seans Başarıyla Eklendi", "Başarılı");
                     Seansget();
                     Reset();
-
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("İşlem Başarısız Eklemek İstenilen Seans Mevcut", "Hata");
+                    MessageBox.Show("İşlem Başarısız", "Hata");
                 }
-
             }
             else
+            {
                 MessageBox.Show("Bilgileri Girmeden Seans Ekleyemezsiniz", "Hata");
+            }
         }
 
         private void btnsil_Click(object sender, EventArgs e)

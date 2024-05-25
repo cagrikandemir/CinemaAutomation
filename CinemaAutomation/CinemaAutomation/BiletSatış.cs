@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CinemaAutomation
 {
@@ -185,6 +187,7 @@ namespace CinemaAutomation
                 }
             }
         }
+        
         private void btnsat_Click(object sender, EventArgs e)
         {
             satis sts=new satis();
@@ -197,17 +200,22 @@ namespace CinemaAutomation
                     
                     string query = "insert into Satis_Bilgi values('" + combofilmisim.Text + "','" + combosalonisim.Text + "','" + combotarih.Text + "','" + combosaat.Text + "','" + txtkoltukno.Text + "','" + txtad.Text + "','" + txtsoyad.Text + "','" + txtucret.Text + "')";
                     sts.SatisEkle(query);                 
-                    MessageBox.Show("Bilet Başarıyla Satıldı", "Başarılı");
+                   DialogResult secenek= MessageBox.Show("Bilet Başarıyla Satıldı Bilet Çıkartmak İster Misiniz ?","Başarılı",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    
+                    DoluKoltuk();
+                    Biletİptal();
+                    if (secenek== DialogResult.Yes)
+                    {
+                        printPreviewDialog1.ShowDialog();
+                        
+                    }
                     txtkoltukno.Text = "";
                     txtad.Text = "";
                     txtsoyad.Text = "";
 
-                    DoluKoltuk();
-                    Biletİptal();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Bilet Satılamadı Koltuk Dolu", "Hata");
 
                 }
             }
@@ -250,6 +258,31 @@ namespace CinemaAutomation
                 }
             }
             else MessageBox.Show("Lütfen Silmek İstediğiniz Koltuk Numarasını Seçiniz", "Uyarı");
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            
+            string filmAd = combofilmisim.Text;
+            string salonAd = combosalonisim.Text;
+            string filmTarih = combotarih.Text;
+            string filmSaat = combosaat.Text;
+            string koltukNo = txtkoltukno.Text;
+            string ad = txtad.Text;
+            string soyad = txtsoyad.Text;
+            string ucret = txtucret.Text;
+      
+            string biletBilgileri = $"Film Adı : {filmAd}\nSalon Adı : {salonAd}\nFilm Tarihi : {filmTarih}\nFilm Saati : {filmSaat}\nKoltuk Numarası : {koltukNo}\nAd : {ad}\nSoyad : {soyad}\nÜcret : {ucret}";
+
+            ev.Graphics.DrawString($"Tarih :{DateTime.Now.ToString("dd.MM.yyyy hh:mm:ss")}", new Font("Arial", 12), Brushes.Black, new PointF(100, 100));
+            ev.Graphics.DrawString("****************************************", new Font("Arial", 12), Brushes.Black, new PointF(120, 150));
+            ev.Graphics.DrawString(biletBilgileri, new Font("Arial", 12), Brushes.Black, new PointF(200, 180));
+            
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
