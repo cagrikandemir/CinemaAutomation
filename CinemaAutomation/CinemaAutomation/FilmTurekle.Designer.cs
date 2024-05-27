@@ -34,14 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TurId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmtur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtfilmtür = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnguncelle = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.btnekle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TurId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filmtur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,7 +50,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.DarkRed;
             this.panel1.Controls.Add(this.btnclosee);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -63,10 +63,11 @@
             // 
             // btnclosee
             // 
-            this.btnclosee.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnclosee.BackColor = System.Drawing.Color.DarkRed;
             this.btnclosee.FlatAppearance.BorderSize = 0;
             this.btnclosee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclosee.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnclosee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnclosee.Location = new System.Drawing.Point(714, 0);
             this.btnclosee.Name = "btnclosee";
             this.btnclosee.Size = new System.Drawing.Size(47, 48);
@@ -89,6 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(54, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 21);
@@ -111,6 +113,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TurId,
@@ -120,6 +123,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(355, 384);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // TurId
+            // 
+            this.TurId.DataPropertyName = "TurId";
+            this.TurId.HeaderText = "Tür ID";
+            this.TurId.Name = "TurId";
+            // 
+            // filmtur
+            // 
+            this.filmtur.DataPropertyName = "filmtur";
+            this.filmtur.HeaderText = "Film Türleri";
+            this.filmtur.Name = "filmtur";
             // 
             // txtfilmtür
             // 
@@ -135,15 +150,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(3, 11);
+            this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(95, 21);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Film Türü";
+            this.label2.Text = "Film Türü :";
             // 
             // btnguncelle
             // 
-            this.btnguncelle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguncelle.BackColor = System.Drawing.Color.DarkRed;
             this.btnguncelle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnguncelle.ForeColor = System.Drawing.Color.White;
             this.btnguncelle.Location = new System.Drawing.Point(496, 357);
@@ -156,7 +171,7 @@
             // 
             // btnsil
             // 
-            this.btnsil.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnsil.BackColor = System.Drawing.Color.DarkRed;
             this.btnsil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnsil.ForeColor = System.Drawing.Color.White;
             this.btnsil.Location = new System.Drawing.Point(572, 309);
@@ -169,7 +184,7 @@
             // 
             // btnekle
             // 
-            this.btnekle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnekle.BackColor = System.Drawing.Color.DarkRed;
             this.btnekle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnekle.ForeColor = System.Drawing.Color.White;
             this.btnekle.Location = new System.Drawing.Point(403, 309);
@@ -182,7 +197,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Controls.Add(this.txtfilmtür);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(373, 169);
@@ -190,22 +205,11 @@
             this.panel2.Size = new System.Drawing.Size(376, 45);
             this.panel2.TabIndex = 20;
             // 
-            // TurId
-            // 
-            this.TurId.DataPropertyName = "TurId";
-            this.TurId.HeaderText = "Tür ID";
-            this.TurId.Name = "TurId";
-            // 
-            // filmtur
-            // 
-            this.filmtur.DataPropertyName = "filmtur";
-            this.filmtur.HeaderText = "Film Türleri";
-            this.filmtur.Name = "filmtur";
-            // 
             // FilmTurekle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -213,6 +217,7 @@
             this.Controls.Add(this.btnsil);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(700, 300);
             this.Name = "FilmTurekle";

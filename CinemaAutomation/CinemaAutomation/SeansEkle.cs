@@ -21,8 +21,8 @@ namespace CinemaAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HomePage home=new HomePage();
-            home.Show();
+            HomePage hm = new HomePage();
+            hm.Show();
             this.Close();
         }
           baglanti Mycon=new baglanti();
@@ -211,6 +211,18 @@ namespace CinemaAutomation
             }
             else MessageBox.Show("Güncellemek İstediğiniz Seansı Seçiniz", "Hata");
            
+        }
+ 
+        private void filter()
+        {
+            Seans hs = new Seans();
+            string query = "select * from Seans_Bilgi where Film_Ad like '%" + txtad.Text + "%'";
+            DataSet ds = hs.SeansGetir(query);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+        private void txtad_TextChanged(object sender, EventArgs e)
+        {
+            filter();
         }
     }
 }

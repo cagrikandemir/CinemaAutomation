@@ -27,12 +27,13 @@ namespace CinemaAutomation
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Film flm = new Film();
+
             if (txtfilmad.Text != "")
             {
-                string query = "insert into Film_Bilgi values('" + txtfilmad.Text + "','" + combofilmtur.Text + "','" + txtfilmsure.Text + "','" + txtyapımcı.Text + "','" + pictureBox2.ImageLocation + "')";
-                Film flm = new Film();
                 try
                 {
+                    string query = "insert into Film_Bilgi values('" + txtfilmad.Text + "','" + combofilmtur.Text + "','" + txtfilmsure.Text + "','" + txtyapımcı.Text + "','" + pictureBox2.ImageLocation + "')";
                     flm.FilmEkle(query);
                     MessageBox.Show("Film Başarıyla Eklendi");
                     Temizle();
@@ -71,8 +72,7 @@ namespace CinemaAutomation
         }
         private void AddMovie_Load(object sender, EventArgs e)
         {
-            txtfilmad.BackColor = Color.White;
-            filmnamepnl.BackColor = Color.White;
+            
             Filmler();
             Filmturgetir();
            
@@ -129,50 +129,21 @@ namespace CinemaAutomation
 
         private void txtfilmad_Click(object sender, EventArgs e)
         {
-            txtfilmad.BackColor = Color.White;
-            filmnamepnl.BackColor = Color.White;
-            panel2.BackColor = SystemColors.Control;
-            panel3.BackColor = SystemColors.Control;
-            panel4.BackColor = SystemColors.Control;
-            txtfilmsure.BackColor = SystemColors.Control;
-            txtyapımcı.BackColor = SystemColors.Control;
-            combofilmtur.BackColor = SystemColors.Control;
+            
         }
 
         private void combofilmtur_Click(object sender, EventArgs e)
         {
-            combofilmtur.BackColor = Color.White;
-            panel2.BackColor = Color.White;
-            filmnamepnl.BackColor = SystemColors.Control;
-            txtfilmad.BackColor= SystemColors.Control;
-            panel3.BackColor = SystemColors.Control;
-            panel4.BackColor = SystemColors.Control;
-            txtfilmsure.BackColor = SystemColors.Control;
-            txtyapımcı.BackColor = SystemColors.Control;
+            
         }
         private void txtfilmsure_Click(object sender, EventArgs e)
         {
-            txtfilmsure.BackColor = Color.White;
-            panel3.BackColor = Color.White;
-            panel2.BackColor = SystemColors.Control;
-            panel4.BackColor = SystemColors.Control;
-            txtfilmad.BackColor = SystemColors.Control;
-            filmnamepnl.BackColor = SystemColors.Control;
-            txtyapımcı.BackColor = SystemColors.Control;
-            combofilmtur.BackColor = SystemColors.Control;
+            
         }
 
         private void txtyapımcı_Click(object sender, EventArgs e)
         {
-            txtyapımcı.BackColor = Color.White;
-            panel4.BackColor = Color.White;
-            panel3.BackColor = SystemColors.Control;
-            panel2.BackColor = SystemColors.Control;
-            filmnamepnl.BackColor = SystemColors.Control;
-            txtfilmad.BackColor = SystemColors.Control;
-            filmnamepnl.BackColor = SystemColors.Control;
-            combofilmtur.BackColor = SystemColors.Control;
-            txtfilmsure.BackColor= SystemColors.Control;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

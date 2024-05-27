@@ -56,9 +56,11 @@ namespace CinemaAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             HomePage homePage = new HomePage();
             homePage.Show();
-            this.Hide();
+            this.Hide();          
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

@@ -32,7 +32,13 @@ namespace CinemaAutomation
             dataGridView1.DataSource = ds.Tables[0];
 
         }
-
+        private void filter()
+        {
+            satis hs = new satis();
+            string query = "select * from Satis_Bilgi where Ad like '%" + txtad.Text + "%'";
+            DataSet ds = hs.SatisGetir(query);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
         private void txtad_Enter(object sender, EventArgs e)
         {
             if (txtad.Text == "Ara...")
@@ -50,6 +56,11 @@ namespace CinemaAutomation
                 txtad.ForeColor = Color.Silver;
             }
 
+        }
+
+        private void txtad_TextChanged(object sender, EventArgs e)
+        {
+            filter();
         }
     }
 }

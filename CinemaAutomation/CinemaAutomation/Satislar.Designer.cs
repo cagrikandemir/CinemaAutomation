@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtad = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Film_İsim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Salon_İsim = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@
             this.Ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucret = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtad = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -123,23 +123,10 @@
             this.Ad,
             this.Soyad,
             this.ucret});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 101);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(940, 566);
+            this.dataGridView1.Size = new System.Drawing.Size(940, 602);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // txtad
-            // 
-            this.txtad.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtad.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtad.Location = new System.Drawing.Point(642, 91);
-            this.txtad.Name = "txtad";
-            this.txtad.Size = new System.Drawing.Size(313, 30);
-            this.txtad.TabIndex = 9;
-            this.txtad.Tag = "";
-            this.txtad.Text = "Ara...";
-            this.txtad.Enter += new System.EventHandler(this.txtad_Enter);
-            this.txtad.Leave += new System.EventHandler(this.txtad_Leave);
             // 
             // Id
             // 
@@ -194,6 +181,20 @@
             this.ucret.DataPropertyName = "ucret";
             this.ucret.HeaderText = "Ücret Tipi";
             this.ucret.Name = "ucret";
+            // 
+            // txtad
+            // 
+            this.txtad.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtad.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtad.Location = new System.Drawing.Point(642, 65);
+            this.txtad.Name = "txtad";
+            this.txtad.Size = new System.Drawing.Size(313, 30);
+            this.txtad.TabIndex = 9;
+            this.txtad.Tag = "";
+            this.txtad.Text = "Ara...";
+            this.txtad.TextChanged += new System.EventHandler(this.txtad_TextChanged);
+            this.txtad.Enter += new System.EventHandler(this.txtad_Enter);
+            this.txtad.Leave += new System.EventHandler(this.txtad_Leave);
             // 
             // Satislar
             // 

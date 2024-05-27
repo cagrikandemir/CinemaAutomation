@@ -50,10 +50,11 @@
             // 
             // btnclosee
             // 
-            this.btnclosee.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnclosee.BackColor = System.Drawing.Color.DarkRed;
             this.btnclosee.FlatAppearance.BorderSize = 0;
             this.btnclosee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclosee.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnclosee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnclosee.Location = new System.Drawing.Point(714, 0);
             this.btnclosee.Name = "btnclosee";
             this.btnclosee.Size = new System.Drawing.Size(47, 48);
@@ -64,7 +65,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.DarkRed;
             this.panel1.Controls.Add(this.btnclosee);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -89,6 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(54, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 21);
@@ -112,6 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(14, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 21);
@@ -131,7 +134,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtslnad);
             this.panel2.Location = new System.Drawing.Point(405, 182);
@@ -141,7 +144,7 @@
             // 
             // btnekle
             // 
-            this.btnekle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnekle.BackColor = System.Drawing.Color.DarkRed;
             this.btnekle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnekle.ForeColor = System.Drawing.Color.White;
             this.btnekle.Location = new System.Drawing.Point(396, 279);
@@ -155,6 +158,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.salonıd,
@@ -179,7 +183,7 @@
             // 
             // btnsil
             // 
-            this.btnsil.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnsil.BackColor = System.Drawing.Color.DarkRed;
             this.btnsil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnsil.ForeColor = System.Drawing.Color.White;
             this.btnsil.Location = new System.Drawing.Point(565, 279);
@@ -192,7 +196,7 @@
             // 
             // btngüncelle
             // 
-            this.btngüncelle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btngüncelle.BackColor = System.Drawing.Color.DarkRed;
             this.btngüncelle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btngüncelle.ForeColor = System.Drawing.Color.White;
             this.btngüncelle.Location = new System.Drawing.Point(483, 327);
@@ -207,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.btngüncelle);
             this.Controls.Add(this.btnsil);
