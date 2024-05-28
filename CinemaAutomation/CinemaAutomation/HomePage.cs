@@ -145,5 +145,18 @@ namespace CinemaAutomation
         {
             UpdateDateTimeLabel();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Kullanicilar kk=new Kullanicilar();
+            kk.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form1 frm=new Form1();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

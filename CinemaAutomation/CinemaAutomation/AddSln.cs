@@ -27,8 +27,7 @@ namespace CinemaAutomation
 
         private void txt_kullaniciadi_MouseUp(object sender, MouseEventArgs e)
         {
-            panel2.BackColor = Color.White;
-            txtslnad.BackColor = Color.White;
+            
             
         }
 
@@ -125,6 +124,9 @@ namespace CinemaAutomation
                     MessageBox.Show(ex.Message);
                 }
             }
+            else MessageBox.Show("Lütfen Güncellemek İçin Salon Seçiniz", "Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+
         }
     }
 }

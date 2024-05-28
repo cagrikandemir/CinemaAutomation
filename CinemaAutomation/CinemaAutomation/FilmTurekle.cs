@@ -26,14 +26,11 @@ namespace CinemaAutomation
         void TurlerGetir()
         {
             Filmturleri flmtur = new Filmturleri();
-            string query = "select * from Filmtur_Bilgi";
+            string query = "select *from Filmtur_Bilgi";
             DataSet ds = flmtur.FilmTurGetir(query);
             dataGridView1.DataSource = ds.Tables[0];
         }
-        void Reset()
-        {
-            txtfilmtür.Text = "";
-        }
+
         private void btnekle_Click(object sender, EventArgs e)
         {
             Filmturleri flmtur=new Filmturleri();
@@ -45,7 +42,7 @@ namespace CinemaAutomation
                     flmtur.FilmTurEkle(query);
                     MessageBox.Show("Film Türü Başarıyla Eklendi", "Başarılı");
                     TurlerGetir();
-                    Reset();
+                    txtfilmtür.Text = "";
                 }
                 catch (Exception)
                 {
@@ -69,7 +66,7 @@ namespace CinemaAutomation
                     flmtur.FilmTurSil(query);
                     MessageBox.Show("Seçilen Film Başarıyla Silindi", "Başarılı");
                     TurlerGetir();
-                    Reset();
+                    txtfilmtür.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -107,7 +104,7 @@ namespace CinemaAutomation
                     flmtur.FilmGuncelle(query);
                     MessageBox.Show("Film Türü Başarıyla Güncellendi", "Başarılı");
                     TurlerGetir();
-                    Reset();
+                    txtfilmtür.Text = "";
                 }
                 catch (Exception)
                 {
@@ -115,6 +112,11 @@ namespace CinemaAutomation
                 }
             }
             
-        }           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

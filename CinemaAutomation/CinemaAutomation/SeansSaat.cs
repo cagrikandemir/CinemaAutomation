@@ -28,6 +28,7 @@ namespace CinemaAutomation
                     ssat.SaatEkle(query);
                     MessageBox.Show("Saat Başarıyla Eklendi", "Başarılı");
                     saatler();
+                    txtsaat.Text = "";
 
                 }
                 catch (Exception)
@@ -71,6 +72,7 @@ namespace CinemaAutomation
                     st.SaatSil(query);
                     MessageBox.Show("Seans Saati Başarıyla Silindi", "Başarılı");
                     saatler();
+                    txtsaat.Text = "";
 
                 }
                 catch (Exception)
@@ -106,6 +108,7 @@ namespace CinemaAutomation
                     st.SaatGuncelle(query);
                     MessageBox.Show("Seans Saati Başarıyla Güncellendi", "Başarılı");
                     saatler();
+                    txtsaat.Text = "";
 
                 }
                 catch (Exception)

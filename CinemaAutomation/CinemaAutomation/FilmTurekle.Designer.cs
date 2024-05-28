@@ -33,19 +33,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TurId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filmtur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtfilmtür = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnguncelle = new System.Windows.Forms.Button();
             this.btnsil = new System.Windows.Forms.Button();
             this.btnekle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.filmtur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TurId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,32 +110,6 @@
             this.btnclose.Text = "X";
             this.btnclose.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TurId,
-            this.filmtur});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(355, 384);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // TurId
-            // 
-            this.TurId.DataPropertyName = "TurId";
-            this.TurId.HeaderText = "Tür ID";
-            this.TurId.Name = "TurId";
-            // 
-            // filmtur
-            // 
-            this.filmtur.DataPropertyName = "filmtur";
-            this.filmtur.HeaderText = "Film Türleri";
-            this.filmtur.Name = "filmtur";
-            // 
             // txtfilmtür
             // 
             this.txtfilmtür.BackColor = System.Drawing.SystemColors.Control;
@@ -150,6 +124,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 21);
@@ -205,6 +180,35 @@
             this.panel2.Size = new System.Drawing.Size(376, 45);
             this.panel2.TabIndex = 20;
             // 
+            // filmtur
+            // 
+            this.filmtur.DataPropertyName = "filmtur";
+            this.filmtur.HeaderText = "Film Türleri";
+            this.filmtur.Name = "filmtur";
+            // 
+            // TurId
+            // 
+            this.TurId.DataPropertyName = "TurId";
+            this.TurId.HeaderText = "Tür ID";
+            this.TurId.Name = "TurId";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TurId,
+            this.filmtur});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(355, 384);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // FilmTurekle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +221,7 @@
             this.Controls.Add(this.btnsil);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.panel2);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(700, 300);
             this.Name = "FilmTurekle";
@@ -227,9 +231,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,14 +245,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnclose;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtfilmtür;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnguncelle;
         private System.Windows.Forms.Button btnsil;
         private System.Windows.Forms.Button btnekle;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TurId;
         private System.Windows.Forms.DataGridViewTextBoxColumn filmtur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TurId;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
